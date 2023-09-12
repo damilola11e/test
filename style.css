@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Ubuntu Mono', monospace;
+    min-height: 7.5vh;
+    background-color: black;
+    padding: 0 10%;
+}
+.nav-logo img{
+    height: 150px;
+    width: 15px;
+    width: 200px;
+    vertical-align:middle;
+}
+.nav-links{
+    display: flex;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links li a{
+    color: whitesmoke;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 15px;
+    margin-left: 50px;
+    transition: color 0.5s ease;
+}
+.nav-links li a:hover{
+    color: red;
+}
+.nav-mobile{
+    display: none;
+
+}
+.nav-mobile div{
+    width: 25px;
+    height: 2.5px;
+    background-color: white;
+    margin: 5px;
+}
+/* responsive media queries */
+@media only screen and  (max-width:992px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position:absolute;
+        right: 0;
+        top: 7.5vh;
+        margin: 5%;
+        height: 92.5vh;
+        background-color: black;
+        width: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10vh 0 30vh 0;
+        transform: translate(100%);
+        transition: transform 0.5s ease;
+    }
+    .nav-links li a{
+        margin-left: 0px;
+    }
+    .nav-mobile{
+        display: block;
+    }
+    .nav-active{
+        transform: translate(0%);
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    } 
+
+}
+
+@media only screen and (min-width:993px) and (max-width:1199px){
+    .nav-links li a{
+      margin-left:20px;
+    }
+}
+
+@media only screen and (min-width:1200px) and (max-width:1400px){
+    .nav-links li a{
+        margin-left: 35px;
+    }
+}
